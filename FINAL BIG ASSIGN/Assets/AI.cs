@@ -9,7 +9,9 @@ public class AI : MonoBehaviour {
 
     public Transform Target;
     //目標物的transform子物件
-    public Rigidbody2D RD;
+    public string targetname = "Player"; 
+    //尋找目標的tag
+    private Rigidbody2D RD;
     //本身的剛體子物件
     private Seeker seeker;
     //本身的seeker子物件
@@ -41,6 +43,7 @@ public class AI : MonoBehaviour {
         //設定空氣阻力
         RD.gravityScale = 0.01f;
         //設定重力大小
+        Target = GameObject.FindGameObjectWithTag(targetname).transform;
 	}
     
 	// Update is called once per frame
