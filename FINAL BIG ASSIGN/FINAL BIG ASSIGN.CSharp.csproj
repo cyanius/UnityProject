@@ -90,6 +90,7 @@
     <Compile Include="Assets\Destroy.cs" />
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\Fox\Fox\Scripts\Fox_Move.cs" />
+    <Compile Include="Assets\Freeze.cs" />
     <Compile Include="Assets\GE Common Assets\GE Orbit Camera\Scripts\GE_OrbitCamera.cs" />
     <Compile Include="Assets\GE Common Assets\GE Orbit Camera\Scripts\GE_OrbitCameraUI.cs" />
     <Compile Include="Assets\GE Common Assets\GE Toggle Full Screen\Scripts\GE_ToggleFullScreenUI.cs" />
