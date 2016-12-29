@@ -5,14 +5,14 @@ using System;
 [RequireComponent (typeof (Rigidbody2D))]
 [RequireComponent (typeof (PolygonCollider2D))]
 [RequireComponent (typeof (EdgeCollider2D))]
+[RequireComponent (typeof (ObjectwithTagsGround))]
 //要求物件上要有Rigidbody2D及Collider2D的子物件(在unity稱作component)，如果物件沒有unity會自動增加這兩種子物件。
 public class move : MonoBehaviour {
 
     public float moveSpeed ;
     //移動速度
     private float Speed;
-    private PolygonCollider2D[] other;
-    //"其他東西的"碰撞器子物件
+    private ObjectwithTagsGround GR;
     private Rigidbody2D Rigidbody ;
     private EdgeCollider2D Trigger;
     //"物件本身的"剛體以及碰撞子物件
@@ -34,13 +34,9 @@ public class move : MonoBehaviour {
         Trigger = GetComponent<EdgeCollider2D>();
         //設定變數取得自己的子物件
         Trigger.isTrigger = true;
-        int count = GameObject.FindGameObjectsWithTag("ground").Length;
-        other = new PolygonCollider2D[count];
-        for(int i = 0; i<other.Length;++i)
-        {
-            other[i] = GameObject.FindGameObjectsWithTag("ground")[i].GetComponent<PolygonCollider2D>();
-            //設定具有標籤"ground"的物件其子物件collider2D為other
-        }
+
+        GR = GetComponent<ObjectwithTagsGround>();
+        
         Speed = moveSpeed;
     }
     //物理效果必使用fixedupdate函式，固定每次執行週期，不會因電腦效能而有差異造成不正常的顯示
@@ -78,7 +74,7 @@ public class move : MonoBehaviour {
     private void Jump()
     {
         collision = 0;
-        foreach (PolygonCollider2D i in other)
+        foreach (PolygonCollider2D i in GR.ground)
         {
             if (Trigger.IsTouching(i) == true)
             {
