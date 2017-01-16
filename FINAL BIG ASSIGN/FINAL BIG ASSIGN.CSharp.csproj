@@ -87,10 +87,11 @@
     <Compile Include="Assets\AI.cs" />
     <Compile Include="Assets\AI2.cs" />
     <Compile Include="Assets\AI3.cs" />
+    <Compile Include="Assets\Board.cs" />
+    <Compile Include="Assets\Camera2DFollow.cs" />
     <Compile Include="Assets\Destroy.cs" />
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\Fox\Fox\Scripts\Fox_Move.cs" />
-    <Compile Include="Assets\Freeze.cs" />
     <Compile Include="Assets\GE Common Assets\GE Orbit Camera\Scripts\GE_OrbitCamera.cs" />
     <Compile Include="Assets\GE Common Assets\GE Orbit Camera\Scripts\GE_OrbitCameraUI.cs" />
     <Compile Include="Assets\GE Common Assets\GE Toggle Full Screen\Scripts\GE_ToggleFullScreenUI.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\bulletInstantiate.cs" />
     <Compile Include="Assets\bulletshot.cs" />
     <Compile Include="Assets\move.cs" />
+    <Compile Include="Assets\springboard.cs" />
     <Compile Include="Assets\stick.cs" />
   </ItemGroup>
   <ItemGroup>
