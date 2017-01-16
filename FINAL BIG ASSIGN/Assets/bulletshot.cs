@@ -19,6 +19,9 @@ public class bulletshot : MonoBehaviour {
     void Start()
     {
         DS = GetComponent<Destroy>();
+        DS.DestroyGround = true;
+        DS.DestroyPlayer = true;
+        DS.DestroyExplosion = false;
         RD = GetComponent<Rigidbody2D>();
         RD.gravityScale = 0f;
         player = GameObject.FindGameObjectWithTag("Player");

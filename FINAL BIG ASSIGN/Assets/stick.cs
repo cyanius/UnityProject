@@ -2,6 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof (Destroy))]
 public class stick : MonoBehaviour {
 
     private CircleCollider2D CC2D;
@@ -20,9 +21,17 @@ public class stick : MonoBehaviour {
     //判斷是否黏在玩家身上的變數
     private move mov;
     //玩家的move
+    private Destroy destroy;
 	// Use this for initialization
 	void Start () 
     {
+        destroy = GetComponent<Destroy>();
+        destroy.enabled = false;
+        //先關閉消滅機制
+        destroy.DestroyExplosion = true;
+        destroy.DestroyGround = false;
+        destroy.DestroyPlayer = false;
+
         CC2D = GetComponent<CircleCollider2D>();
         CC2D.radius = 0.25f;
         CC2D.isTrigger = true;
@@ -39,6 +48,7 @@ public class stick : MonoBehaviour {
         if(i == true)
         {
             Position();
+            destroy.enabled = true;
         }
 	}
     private void OnTriggerEnter2D(Collider2D other)

@@ -51,8 +51,6 @@ public class move : MonoBehaviour {
         Gliding();
         
         Dash();
-
-        Raise();
     }
     private void Gliding() //滑翔函式
     {
@@ -103,9 +101,5 @@ public class move : MonoBehaviour {
     private void Initial()
     {
         r = 1 / (1 + 0.1f * x);
-    }
-    private void Raise()
-    {
-
     }
 }
